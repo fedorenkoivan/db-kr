@@ -14,7 +14,8 @@ INSERT INTO categories (category_name, description)
 VALUES ('Antiques', 'Items older than 50 years.'),
 ('Collectibles', 'Coins, stamps, cards, models.'),
 ('Art', 'Paintings, sculptures, installations.'),
-('Gaming', 'Items for gamers.');
+('Gaming', 'Items for gamers.'),
+('Working Electronics', 'Gadgets and devices in working condition.');
 
 INSERT INTO lots (seller_id, category_id, title, description, start_price, current_price, start_time, end_time, status)
 VALUES

@@ -26,8 +26,7 @@ CREATE TABLE IF NOT EXISTS lots
     current_price decimal(10, 2) NOT NULL,
     start_time timestamp without time zone NOT NULL,
     end_time timestamp without time zone NOT NULL,
-    status varchar(10) NOT NULL CHECK (status IN ('Active', 'Sold', 'Expired', 'Canceled')),
-    image_url varchar(255)
+    status varchar(10) NOT NULL CHECK (status IN ('Active', 'Sold', 'Expired', 'Canceled'))
 );
 
 CREATE TABLE IF NOT EXISTS bids 

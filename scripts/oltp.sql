@@ -16,7 +16,7 @@ DELETE FROM users
 WHERE email = 'maria@auction.com';
 
 DELETE FROM categories
-WHERE category_name = 'Gaming';
+WHERE category_name = 'Working Electronics';
 
 
 SELECT
