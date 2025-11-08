@@ -8,6 +8,13 @@ CREATE TABLE IF NOT EXISTS users
     registration_date TIMESTAMP WITHOUT TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE IF NOT EXISTS categories 
+(
+    category_id serial PRIMARY KEY,
+    category_name varchar(50) NOT NULL UNIQUE,
+    description text
+);
+
 CREATE TABLE IF NOT EXISTS lots 
 (
     lot_id serial PRIMARY KEY,
@@ -33,12 +40,6 @@ CREATE TABLE IF NOT EXISTS bids
     CHECK (bid_amount > 0)
 );
 
-CREATE TABLE IF NOT EXISTS categories 
-(
-    category_id serial PRIMARY KEY,
-    category_name varchar(50) NOT NULL UNIQUE,
-    description text
-);
 
 CREATE TABLE IF NOT EXISTS transactions
 (
