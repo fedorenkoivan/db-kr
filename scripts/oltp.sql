@@ -1,19 +1,8 @@
 INSERT INTO categories (category_name, description)
 VALUES ('Jewelry', 'Fine and costume jewelry, rings, necklaces.');
 
-INSERT INTO lots (seller_id, category_id, title, description, start_price, current_price, start_time, end_time, status) 
-VALUES
-(
-    2, 
-    4, 
-    'Gold Necklace', 
-    '18k gold necklace with diamond pendant.', 
-    1200.00, 
-    1500.00, 
-    NOW() - INTERVAL '1 days', 
-    NOW() + INTERVAL '6 days', 
-    'Active'
-);
+INSERT INTO users (username, email, password_hash, full_name)
+VALUES ('maria_jewels', 'maria@auction.com', 'hash10', 'Maria Jewels');
 
 UPDATE lots
 SET current_price = 800.00
@@ -24,7 +13,7 @@ SET payment_status = 'Paid', transaction_date = NOW()
 WHERE transaction_id = 1 AND payment_status = 'Pending';
 
 DELETE FROM users
-WHERE user_id = 5;
+WHERE email = 'maria@auction.com';
 
 DELETE FROM categories
 WHERE category_name = 'Gaming';
