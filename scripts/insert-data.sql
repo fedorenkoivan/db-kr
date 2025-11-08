@@ -2,12 +2,15 @@ INSERT INTO users (username, email, password_hash, full_name)
 VALUES ('ivanko_seller', 'ivan@auction.com', 'hash1', 'Ivan Seller'),
 ('olena_bidder', 'olena@auction.com', 'hash2', 'Olena Buyer'),
 ('petro_collector', 'petro@auction.com', 'hash3', 'Petro Collector'),
-('anna_art', 'anna@auction.com', 'hash4', 'Anna ArtLover');
+('anna_art', 'anna@auction.com', 'hash4', 'Anna ArtLover'),
+('ivanko__evil_seller', 'ivan.evil@auction.com', 'hash21', 'Ivan Evil Seller');
+
 
 INSERT INTO categories (category_name, description)
 VALUES ('Antiques', 'Items older than 50 years.'),
 ('Collectibles', 'Coins, stamps, cards, models.'),
-('Art', 'Paintings, sculptures, installations.');
+('Art', 'Paintings, sculptures, installations.'),
+('Gaming', 'Items for gamers.');
 
 INSERT INTO lots (seller_id, category_id, title, description, start_price, current_price, start_time, end_time, status) 
 VALUES
