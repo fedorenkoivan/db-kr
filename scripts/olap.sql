@@ -16,7 +16,7 @@ RankedLots AS (
     FROM
         LotBidCounts lbc
     JOIN
-        Lots l ON lbc.lot_id = l.lot_id
+        lots l ON lbc.lot_id = l.lot_id
 )
 SELECT
     title,
@@ -30,7 +30,7 @@ WHERE
 SELECT
     c.category_name,
     COUNT(t.transaction_id) AS total_sales,
-    AVG(t.final_price) AS average_final_price
+    ROUND(AVG(t.final_price), 2) AS average_final_price
 FROM
     transactions t
 JOIN
@@ -49,9 +49,9 @@ SELECT
     SUM(t.final_price) AS total_won_amount,
     RANK() OVER (ORDER BY SUM(t.final_price) DESC) AS user_rank
 FROM 
-    Users u
+    users u
 JOIN 
-    Transactions t ON u.user_id = t.winner_id
+    transactions t ON u.user_id = t.winner_id
 GROUP BY 
     u.user_id, u.full_name
 ORDER BY 
